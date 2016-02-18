@@ -1,0 +1,44 @@
+# Local/private config goes in the include
+[include]
+path = ~/.gitconfig.local
+
+[core]
+excludesfile = ~/.gitignore
+filemode = true
+editor = vim
+autocrlf = input
+
+[color]
+diff = auto
+status = auto
+branch = auto
+ui = true
+
+[alias]
+changes=diff --name-status -r
+diffstat=diff --stat -r
+fix = commit -a --amend -C HEAD
+io = "!sh -c 'curl -i http://git.io -F url=$1' -"
+lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+unpushed = log  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --branches --not --remotes
+
+[apply]
+whitespace = nowarn
+
+[mergetool]
+keepBackup = false
+
+[difftool]
+prompt = false
+
+[help]
+autocorrect = 1
+
+[push]
+# Setting to git 2.0 default to suppress warning message
+default = simple
+
+[filter "lfs"]
+clean = git-lfs clean %f
+smudge = git-lfs smudge %f
+required = true

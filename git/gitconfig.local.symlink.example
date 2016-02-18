@@ -1,0 +1,6 @@
+[user]
+name = "Ticean Bennett"
+email = "ticean@gmail.com"
+
+#[credential]
+#helper = GIT_CREDENTIAL_HELPER

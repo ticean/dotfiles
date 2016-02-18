@@ -1,0 +1,10 @@
+# My customized git aliases are best in the biz.
+alias gb='git branch'
+alias gbd='git branch -d'
+alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gd='git diff'
+alias gds='git diff --staged'
+alias gl='git lg'
+alias gs='git status'
+alias gref='git reflog'
