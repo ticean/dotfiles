@@ -1,6 +1,10 @@
 alias reload!='. ~/.zshrc'
 alias zource='. ~/.zshrc'
 
+# Show human friendly numbers and colors
+alias df='df -h'
+alias du='du -h -d 2'
+
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
