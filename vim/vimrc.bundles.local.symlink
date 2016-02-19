@@ -1,0 +1,11 @@
+Bundle 'bling/vim-airline'
+Bundle 'guns/vim-clojure-highlight'
+Bundle 'guns/vim-clojure-static'
+Bundle 'jlanzarotta/bufexplorer'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'mattn/gist-vim'
+Bundle 'suan/vim-instant-markdown'
+Bundle 'tpope/vim-classpath'
+Bundle 'tpope/vim-fireplace'
+
+Plugin 'ekalinin/Dockerfile.vim'
