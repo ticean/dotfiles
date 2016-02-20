@@ -33,6 +33,7 @@ set hlsearch
 nnoremap <silent> <CR> :noh<cr>
 
 " gui settings
+let g:airline_powerline_fonts = 1
 if (&t_Co == 256 || has('gui_running'))
   if ($TERM_PROGRAM == 'iTerm.app')
     colorscheme Tomorrow-Night-Eighties
