@@ -7,7 +7,7 @@ set nowrap " no wrap by default
 nnoremap <f1> :BufExplorer<cr>
 nnoremap <f2> :NERDTreeToggle<cr>
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
-nnoremap <leader>g :Gbrowse<CR>
+nnoremap <leader>G :Gbrowse<CR>
 "key mapping for window resizing
 nnoremap <S-Up> <C-W>+
 nnoremap <S-Down> <C-W>-
