@@ -20,6 +20,11 @@ let g:NERDTreeMouseMode = 2
 let g:NERDTreeWinSize = 40
 let NERDTreeIgnore=['\.swp$']
 
+" BufExplorer settings
+let g:bufExplorerDefaultHelp=0                " Do not show default help.
+let g:bufExplorerDisableDefaultKeyMapping=0   " Do not disable mapping.
+let g:bufExplorerFindActive=0                 " Do not go to active window.
+
 " Show gutter for max line length
 let &colorcolumn=join(range(81,999),",")
 
