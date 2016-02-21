@@ -25,7 +25,6 @@ set backspace=2                                              " Fix broken backsp
 set backupcopy=yes                                           " see :help crontab
 set clipboard=unnamed                                        " yank and paste with the system clipboard
 set directory-=.                                             " don't store swapfiles in the current directory
-set encoding=utf-8
 set expandtab                                                " expand tabs to spaces
 set ignorecase                                               " case-insensitive search
 set incsearch                                                " search as you type
@@ -47,6 +46,15 @@ set wildmode=longest,list,full
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
 
+if !has('nvim')
+  set clipboard+=unnamedplus
+  set encoding=utf-8
+
+  if exists('$TMUX')    " Support resizing in tmux
+    set ttymouse=xterm2 " ttymouse not an option in nvim
+  endif
+endif
+
 if has('nvim')
   " Temporary fix for neovim/neovim#2048
   " Shoutout to @vilhalmer for the idea for this fix
@@ -54,12 +62,6 @@ if has('nvim')
   "nmap <bs> <C-w>h                " Fix for window movement
   "nmap <C-w><bs> :tabprevious<CR> " Fix for tab movement
   nmap <BS> <C-W>h
-endif
-
-if !has('nvim')
-  if exists('$TMUX')    " Support resizing in tmux
-    set ttymouse=xterm2 " ttymouse not an option in nvim
-  endif
 endif
 
 " keyboard shortcuts
