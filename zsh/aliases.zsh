@@ -1,6 +1,8 @@
 alias reload!='. ~/.zshrc'
 alias zource='. ~/.zshrc'
 
+alias vim='nvim'
+
 # Show human friendly numbers and colors
 alias df='df -h'
 alias du='du -h -d 2'

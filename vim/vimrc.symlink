@@ -46,8 +46,20 @@ set wildmode=longest,list,full
 
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
-if exists('$TMUX')  " Support resizing in tmux
-  set ttymouse=xterm2
+
+if has('nvim')
+  " Temporary fix for neovim/neovim#2048
+  " Shoutout to @vilhalmer for the idea for this fix
+  " https://github.com/vilhalmer/System/commit/a40ff262918a83e88fb643bad31dde3c45211bba
+  "nmap <bs> <C-w>h                " Fix for window movement
+  "nmap <C-w><bs> :tabprevious<CR> " Fix for tab movement
+  nmap <BS> <C-W>h
+endif
+
+if !has('nvim')
+  if exists('$TMUX')    " Support resizing in tmux
+    set ttymouse=xterm2 " ttymouse not an option in nvim
+  endif
 endif
 
 " keyboard shortcuts
