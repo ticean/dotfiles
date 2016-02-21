@@ -113,10 +113,6 @@ set-option -g default-shell /bin/zsh
 # Fix problem when SSHing
 #set -g default-terminal "xterm"
 
-# Mouse mode
-bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
-bind -n WheelDownPane select-pane -t= \; send-keys -M
-
 # Resize panes using leader H J K L
 bind H resize-pane -L 10
 bind J resize-pane -D 10
