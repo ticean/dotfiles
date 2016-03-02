@@ -28,6 +28,7 @@ NODE_MODULES=( \
   babel \
   eslint \
   grunt-cli \
+  instant-markdown-d \
   js-beautify \
   jscs \
   jshint \
