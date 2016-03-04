@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Authenticate with StackStorm and set the token in env.
+#
+
+st2auth () {
+  username="$1"
+  password="$2"
+  echo "Getting StackStorm auth token." 2>&1
+  export ST2_AUTH_TOKEN=$(st2 auth -t -p $2 $1)
+  echo $ST2_AUTH_TOKEN
+}

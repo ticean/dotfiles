@@ -4,3 +4,6 @@
 
 pip install virtualenv
 pip install virtualenvwrapper
+
+# StackStorm client
+pip install st2client
