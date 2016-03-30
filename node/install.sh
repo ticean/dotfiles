@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Install NVM
 export NVM_DIR="$HOME/.nvm"
 NVM_CURRENT_VERSION=v0.12.7
@@ -8,26 +10,24 @@ if [[ ! -d "$NVM_DIR" ]]; then
 fi
 
 echo "Updating NVM..."
-cd "$NVM_DIR"
-git checkout $(git describe --abbrev=0 --tags)
+cd "$NVM_DIR" || ( echo "NVM_DIR does not exist!" >&2 && exit 1 )
+git checkout "$(git describe --abbrev=0 --tags)"
+
+# shellcheck source=/dev/null
 source "$NVM_DIR/nvm.sh"
 
 echo "Installing NVM versions."
 NVM_VERSIONS=( \
   v0.12.7 \
+  stable \
 )
-for V in $NVM_VERSIONS; do
-  nvm install $V
-done
 
-echo "Setting current NVM version to '$NVM_CURRENT_VERSION'"
-nvm use $NVM_CURRENT_VERSION
-
-echo "Installing global NPM modules."
 NODE_MODULES=( \
   babel \
+  bower \
   eslint \
   grunt-cli \
+  gulp \
   instant-markdown-d \
   js-beautify \
   jscs \
@@ -35,6 +35,17 @@ NODE_MODULES=( \
   ttystudio \
 )
 
-for MOD in $NODE_MODULES; do
-  which $MOD > /dev/null 2>&1 || npm install -g $MOD
+echo "Installing Node version with NPM." >&2
+for V in "${NVM_VERSIONS[@]}"
+do
+  nvm install "$V"
+  nvm use "$V"
+  echo "Installing global NPM modules." >&2
+  for MOD in "${NODE_MODULES[@]}"
+  do
+    which "$MOD" &>/dev/null || npm install -g "$MOD"
+  done
 done
+
+echo "Setting current NVM version to '$NVM_CURRENT_VERSION'" >&2
+nvm use $NVM_CURRENT_VERSION
