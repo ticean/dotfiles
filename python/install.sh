@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 #
-# Installs virtualenv and virtualenwrapper
+pip3 install --upgrade pip
 
-pip install virtualenv
-pip install virtualenvwrapper
+pip3 install virtualenv
+pip3 install virtualenvwrapper
 
 # StackStorm client
-pip install st2client
+pip3 install st2client
