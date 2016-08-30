@@ -37,6 +37,7 @@ brew 'wget'
 
 cask 'dockertoolbox'
 cask 'firefox'
+cask 'flux'
 cask 'google-chrome'
 cask 'haskell-platform'
 cask 'iterm2'
