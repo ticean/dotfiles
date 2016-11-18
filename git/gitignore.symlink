@@ -34,3 +34,5 @@ Thumbs.db
 .vagrant
 /bin/*
 /vendor/
+.nesh*
+.node_repl*
