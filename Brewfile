@@ -36,6 +36,7 @@ brew 'unrar'
 brew 'wget'
 
 cask 'dockertoolbox'
+cask 'dropbox'
 cask 'firefox'
 cask 'flux'
 cask 'google-chrome'
