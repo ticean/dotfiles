@@ -2,7 +2,7 @@
 
 # Install NVM
 export NVM_DIR="$HOME/.nvm"
-NVM_CURRENT_VERSION=v0.12.7
+NVM_CURRENT_VERSION=stable
 
 if [[ ! -d "$NVM_DIR" ]]; then
   echo "Installing NVM to '$NVM_DIR'."
@@ -19,6 +19,7 @@ source "$NVM_DIR/nvm.sh"
 echo "Installing NVM versions."
 NVM_VERSIONS=( \
   v0.12.7 \
+  v4.3.2 \
   stable \
 )
 
