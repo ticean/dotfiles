@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+app=$1
+rack=$2
+
+convox ps --app "${app}" --rack "${rack}" \
+  | tail -n +2 \
+  | cut -f1 -d' ' \
+  | while IFS=: read task
+do
+  echo "Restarting ${task}"
+  echo convox ps stop "${task}" --app "${app}" --rack "${rack}"
+  convox ps stop "${task}" --app "${app}" --rack "${rack}"
+done
