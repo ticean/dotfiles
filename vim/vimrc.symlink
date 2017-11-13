@@ -212,3 +212,8 @@ endfunction
 "When the GUI starts, t_vb is reset to its default value.
 "Reassert that no flash or beep is wanted.
 set visualbell t_vb=
+
+"Syntastic hinting
+" Use jshint (uses ~/.jshintrc)
+let g:syntastic_javascript_checkers = ['eslint', 'jscs']
+let g:syntastic_javascript_eslint_args = '--rulesdir "$HOME"/.eslint_rules'
