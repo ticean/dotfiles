@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+# Restarts a Convox application by stopping all processes.
+# Accepts two ordered args, the app name and the rack name.
+#
+# Usage:
+#
+#    convox-restart kafka-connect prod20
+#
 
 app=$1
 rack=$2
