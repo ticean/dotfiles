@@ -36,7 +36,7 @@ brew 'tmux'
 brew 'unrar'
 brew 'wget'
 
-cask 'dockertoolbox'
+cask 'atom'
 cask 'dropbox'
 cask 'firefox'
 cask 'flux'
