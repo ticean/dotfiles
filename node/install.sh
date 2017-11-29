@@ -17,11 +17,7 @@ git checkout "$(git describe --abbrev=0 --tags)"
 source "$NVM_DIR/nvm.sh"
 
 echo "Installing NVM versions."
-NVM_VERSIONS=( \
-  v0.12.7 \
-  v4.3.2 \
-  stable \
-)
+NVM_VERSIONS=(stable)
 
 NODE_MODULES=( \
   babel \
