@@ -13,7 +13,6 @@ call vundle#rc()
 " install Vundle bundles
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
-  source ~/.vimrc.bundles.local
 endif
 
 " ensure ftdetect et al work by including this after the Vundle stuff
@@ -162,20 +161,29 @@ let g:bufExplorerDisableDefaultKeyMapping=0   " Do not disable mapping.
 let g:bufExplorerFindActive=0                 " Do not go to active window.
 
 " Show gutter for max line length
-let &colorcolumn=join(range(81,999),",")
+"let &colorcolumn=join(range(81,999),",")
+let &colorcolumn="80,".join(range(120,999),",")
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 " highlight search
 set hlsearch
 nnoremap <silent> <CR> :noh<cr>
 
+" color with base16-shell
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
 " gui settings
+let base16colorspace=256
 let g:airline_powerline_fonts = 1
 if (&t_Co == 256 || has('gui_running'))
   if ($TERM_PROGRAM == 'iTerm.app')
-    colorscheme Tomorrow-Night-Eighties
+    colorscheme base16-eighties
     set guifont=Source\ Code\ Pro:h16
   else
-    colorscheme Tomorrow-Night-Eighties
+    colorscheme base16-eighties
     set guifont=Source\ Code\ Pro:h16
   endif
 endif
