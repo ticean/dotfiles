@@ -1,6 +1,7 @@
 cask_args appdir: '/Applications'
 
 tap 'caskroom/cask'
+tap 'caskroom/versions'
 tap 'homebrew/bundle'
 
 brew 'ack'
@@ -45,6 +46,7 @@ cask 'google-chrome'
 cask 'gitter'
 cask 'haskell-platform'
 cask 'iterm2'
+cask 'java8'
 cask 'macdown'
 cask 'macvim'
 cask 'postico'
