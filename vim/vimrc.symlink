@@ -221,7 +221,12 @@ endfunction
 "Reassert that no flash or beep is wanted.
 set visualbell t_vb=
 
-"Syntastic hinting
-" Use jshint (uses ~/.jshintrc)
-let g:syntastic_javascript_checkers = ['eslint', 'jscs']
-let g:syntastic_javascript_eslint_args = '--rulesdir "$HOME"/.eslint_rules'
+"Syntastic JavaScript hinting
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
