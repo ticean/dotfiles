@@ -4,7 +4,10 @@ tap 'caskroom/cask'
 tap 'caskroom/versions'
 tap 'homebrew/bundle'
 
+tap 'atombender/ktail'
+
 brew 'ack'
+brew 'atombender/ktail/ktail'
 brew 'autoconf'
 brew 'automake'
 brew 'awscli'
