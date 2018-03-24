@@ -1,5 +1,5 @@
 # My customized git aliases are best in the biz.
-alias gb='git branch'
+alias gb='git --no-pager branch'
 alias gbd='git branch -d'
 alias gco='git checkout'
 alias gcob='git checkout -b'
