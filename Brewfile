@@ -50,6 +50,7 @@ brew 'the_silver_searcher'
 brew 'tmux'
 brew 'unrar'
 brew 'wget'
+brew 'yarn', args: ['--without-node']
 
 cask 'atom'
 cask 'dropbox'
