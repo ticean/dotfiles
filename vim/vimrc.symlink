@@ -221,21 +221,11 @@ endfunction
 "Reassert that no flash or beep is wanted.
 set visualbell t_vb=
 
-"Syntastic JavaScript hinting
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_javascript_checkers = ['eslint']
-
-
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['eslint', 'prettier']
+" ALE for linting and fixing.
+let g:ale_fixers = ['trim_whitespace']
 let g:ale_fixers['bash'] = ['shellcheck']
 let g:ale_fixers['clojure'] = ['joker']
+let g:ale_fixers['javascript'] = ['eslint', 'prettier']
+let g:ale_fixers['markdown'] = ['prettier']
 let g:ale_fix_on_save = 1
-"let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
 let g:ale_javascript_prettier_use_local_config = 1
