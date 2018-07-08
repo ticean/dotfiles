@@ -181,10 +181,10 @@ let g:airline_powerline_fonts = 1
 if (&t_Co == 256 || has('gui_running'))
   if ($TERM_PROGRAM == 'iTerm.app')
     colorscheme base16-eighties
-    set guifont=Source\ Code\ Pro:h16
+    set guifont=Hasklig:h16
   else
     colorscheme base16-eighties
-    set guifont=Source\ Code\ Pro:h16
+    set guifont=Hasklig:h16
   endif
 endif
 
