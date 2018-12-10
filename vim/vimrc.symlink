@@ -64,13 +64,20 @@ if has('nvim')
   nmap <BS> <C-W>h
 endif
 
+function! TrimWhiteSpace()
+  %s/\s\+$//e
+endfunction
+
+"-----------------------
 " keyboard shortcuts
+"-----------------------
 let mapleader = ','
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <leader>l :Align
+noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 nnoremap <leader>a :Ag<space>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>d :NERDTreeToggle<CR>
@@ -80,15 +87,17 @@ nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
+nnoremap <leader>G :Gbrowse<CR>
 nnoremap <leader>c <Plug>Kwbd
-noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+nnoremap <f1> :BufExplorer<cr>
+nnoremap <f2> :NERDTreeToggle<cr>
+nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
 
 " plugin settings
 let g:ctrlp_match_window = 'order:ttb,max:20'
-let g:NERDSpaceDelims=1
 let g:gitgutter_enabled = 0
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
@@ -100,6 +109,7 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
+" Filetype Hints
 " fdoc is yaml
 autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
 " md is markdown
@@ -135,30 +145,12 @@ vnoremap p "_dP
 set nocursorline " don't highlight current line
 set nowrap " no wrap by default
 
-"-----------------------
-" keyboard shortcuts
-"-----------------------
-nnoremap <f1> :BufExplorer<cr>
-nnoremap <f2> :NERDTreeToggle<cr>
-nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
-nnoremap <leader>G :Gbrowse<CR>
-
 "key mapping for window resizing
 nnoremap <S-Up> <C-W>+
 nnoremap <S-Down> <C-W>-
 nnoremap <S-Left> <C-w><
 nnoremap <S-Right> <C-w>>
 inoremap jj <ESC>
-
-" NERDTree settings
-let g:NERDTreeMouseMode = 2
-let g:NERDTreeWinSize = 40
-let NERDTreeIgnore=['\.swp$']
-
-" BufExplorer settings
-let g:bufExplorerDefaultHelp=0                " Do not show default help.
-let g:bufExplorerDisableDefaultKeyMapping=0   " Do not disable mapping.
-let g:bufExplorerFindActive=0                 " Do not go to active window.
 
 " Show gutter for max line length
 "let &colorcolumn=join(range(81,999),",")
@@ -188,22 +180,9 @@ if (&t_Co == 256 || has('gui_running'))
   endif
 endif
 
-" Disambiguate ,a & ,t from the Align plugin, making them fast again.
-"
-" This section is here to prevent AlignMaps from adding a bunch of mappings
-" that interfere with the very-common ,a and ,t mappings. This will get run
-" at every startup to remove the AlignMaps for the *next* vim startup.
-"
-" If you do want the AlignMaps mappings, remove this section, remove
-" ~/.vim/bundle/Align, and re-run rake in maximum-awesome.
-function! s:RemoveConflictingAlignMaps()
-  if exists("g:loaded_AlignMapsPlugin")
-    AlignMapsClean
-  endif
-endfunction
-command! -nargs=0 RemoveConflictingAlignMaps call s:RemoveConflictingAlignMaps()
-silent! autocmd VimEnter * RemoveConflictingAlignMaps
-
+" spell check settings
+hi clear SpellBad
+hi SpellBad cterm=undercurl
 
 "jump to last cursor position when opening a file
 "dont do it when writing a commit log entry
@@ -221,11 +200,50 @@ endfunction
 "Reassert that no flash or beep is wanted.
 set visualbell t_vb=
 
+
+" NERDTree settings
+let g:NERDTreeMouseMode = 2
+let g:NERDTreeWinSize = 40
+let NERDTreeIgnore=['\.swp$']
+let NERDSpaceDelims=1
+let NERDTreMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+" BufExplorer settings
+let g:bufExplorerDefaultHelp=0                " Do not show default help.
+let g:bufExplorerDisableDefaultKeyMapping=0   " Do not disable mapping.
+let g:bufExplorerFindActive=0                 " Do not go to active window.
+
+" JavaScript settings
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 0
+
+" Rainbow settings
+let g:rainbow_active = 0
+
+" Align settings
+" Disambiguate ,a & ,t from the Align plugin, making them fast again.
+"
+" This section is here to prevent AlignMaps from adding a bunch of mappings
+" that interfere with the very-common ,a and ,t mappings. This will get run
+" at every startup to remove the AlignMaps for the *next* vim startup.
+"
+" If you do want the AlignMaps mappings, remove this section, remove
+" ~/.vim/bundle/Align, and re-run rake in maximum-awesome.
+function! s:RemoveConflictingAlignMaps()
+  if exists("g:loaded_AlignMapsPlugin")
+    AlignMapsClean
+  endif
+endfunction
+command! -nargs=0 RemoveConflictingAlignMaps call s:RemoveConflictingAlignMaps()
+silent! autocmd VimEnter * RemoveConflictingAlignMaps
+
 " ALE for linting and fixing.
+let g:ale_fix_on_save = 0
 let g:ale_fixers = ['trim_whitespace']
 let g:ale_fixers['bash'] = ['shellcheck']
 let g:ale_fixers['clojure'] = ['joker']
 let g:ale_fixers['javascript'] = ['eslint', 'prettier']
 let g:ale_fixers['markdown'] = ['prettier']
-let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
