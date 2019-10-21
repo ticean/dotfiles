@@ -1,3 +1,5 @@
+# Customize the Mac OSX touchbar with useful info.
+
 # GIT
 GIT_UNCOMMITTED="${GIT_UNCOMMITTED:-+}"
 GIT_UNSTAGED="${GIT_UNSTAGED:-!}"
