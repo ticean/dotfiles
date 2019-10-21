@@ -1,3 +1,7 @@
+# Use Zsh as the default shell and load all the goodness.
+set-option -g default-shell /bin/zsh
+set-option -g default-command /bin/zsh
+
 # use C-a, since it's on the home row and easier to hit than C-b
 set-option -g prefix C-a
 unbind-key C-a
@@ -19,6 +23,9 @@ set-option -g default-terminal xterm-256color
 bind-key : command-prompt
 bind-key r refresh-client
 bind-key L clear-history
+
+# Pack all windows down to lowest available number(s).
+bind-key p movew -r\; display-message "Packed tmux windows."
 
 bind-key space next-window
 bind-key bspace previous-window
@@ -107,8 +114,6 @@ set-option -g assume-paste-time 0
 #####################################
 ### More personalized changes.
 #####################################
-
-set-option -g default-shell /bin/zsh
 
 # Fix problem when SSHing
 #set -g default-terminal "xterm"
