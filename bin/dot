@@ -10,16 +10,20 @@ sudo -v
 
 export ZSH=$HOME/.dotfiles
 
-# Set OS X defaults
-$ZSH/osx/set-defaults.sh
+echo "Set OS X defaults"
+echo "› $ZSH/osx/set-defaults.sh"
+"$ZSH/osx/set-defaults.sh"
 
-# Install homebrew
-$ZSH/homebrew/install.sh 2>&1
+echo "Install Homebrew"
+echo "› $ZSH/homebrew/install.sh"
+"$ZSH/homebrew/install.sh" 2>&1
 
 # Upgrade homebrew
+echo "Brew update"
 echo "› brew update"
 brew update
 
 # Install software
+echo "Install software"
 echo "› $ZSH/script/install"
-$ZSH/script/install
+"$ZSH/script/install"
