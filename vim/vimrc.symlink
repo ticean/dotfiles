@@ -88,10 +88,12 @@ nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
 nnoremap <leader>G :Gbrowse<CR>
+nnoremap <leader>ee :ConjureEvalRootForm<CR>
 nnoremap <leader>c <Plug>Kwbd
 nnoremap <f1> :BufExplorer<cr>
 nnoremap <f2> :NERDTreeToggle<cr>
-nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+"nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+"nnoremap <leader>ee <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
@@ -152,9 +154,12 @@ nnoremap <S-Left> <C-w><
 nnoremap <S-Right> <C-w>>
 inoremap jj <ESC>
 
+" Insert literal tabs with Shift-Tab in insert mode.
+inoremap <S-Tab> <C-V><Tab>
+
 " Show gutter for max line length
-"let &colorcolumn=join(range(81,999),",")
-let &colorcolumn="80,".join(range(120,999),",")
+let &colorcolumn=join(range(81,999),",")
+"let &colorcolumn=join(range(120,999),",")
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 " highlight search
@@ -247,3 +252,11 @@ let g:ale_fixers['clojure'] = ['joker']
 let g:ale_fixers['javascript'] = ['eslint', 'prettier']
 let g:ale_fixers['markdown'] = ['prettier']
 let g:ale_javascript_prettier_use_local_config = 1
+
+" Use deoplete for auto-completion.
+let g:deoplete#enable_at_startup = 1
+
+" Configure conjure - Clojure prepl integration.
+let g:conjure_log_direction = "horizontal"
+let g:conjure_log_blacklist = ["up", "ret", "ret-multiline", "load-file", "eval"]
+"let g:conjure_nmap_eval_root_form = g:conjure_map_prefix . "EE"
