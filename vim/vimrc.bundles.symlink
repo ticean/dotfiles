@@ -1,4 +1,4 @@
-Plugin 'Olical/conjure', { 'tag': 'v2.0.0', 'do': 'bin/compile'  }
+"Plugin 'Olical/conjure', { 'tag': 'v2.0.0', 'do': 'bin/compile'  }
 Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plugin 'airblade/vim-gitgutter'
 Plugin 'austintaylor/vim-indentobject'
@@ -31,12 +31,14 @@ Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-classpath'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-cucumber'
+Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-salve'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vividchalk'

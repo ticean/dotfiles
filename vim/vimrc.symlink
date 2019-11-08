@@ -43,6 +43,10 @@ set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc
 set wildmenu                                                 " show a navigable menu for tab completion
 set wildmode=longest,list,full
 
+" Persistent undo history
+set undofile " Maintain undo history between sessions
+set undodir=~/.vim/undodir
+
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
 
@@ -85,15 +89,23 @@ nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 nnoremap <leader>] :TagbarToggle<CR>
-nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
+nnoremap <leader><space> :call TrimWhiteSpace()<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
 nnoremap <leader>G :Gbrowse<CR>
-nnoremap <leader>ee :ConjureEvalRootForm<CR>
 nnoremap <leader>c <Plug>Kwbd
 nnoremap <f1> :BufExplorer<cr>
 nnoremap <f2> :NERDTreeToggle<cr>
-"nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
-"nnoremap <leader>ee <C-w><C-v><C-l>:e $MYVIMRC<cr>
+
+" Fireplace config
+autocmd FileType clojure nnoremap <buffer> <leader>re :Eval<cr>
+autocmd FileType clojure nnoremap <buffer> <leader>rf :%Eval<cr>
+autocmd FileType clojure nnoremap <buffer> <leader>rr :Require<cr>
+autocmd FileType clojure nnoremap <buffer> <leader>rR :Require!<cr>
+autocmd FileType clojure nnoremap <buffer> <leader>rt :RunTests<cr>
+autocmd FileType clojure nnoremap <buffer> <leader>rl :Last<cr>
+autocmd FileType clojure nnoremap <buffer> <leader>rc :FireplaceConnect<cr>
+autocmd FileType clojure nnoremap <buffer> <leader>go :Eval (reset)<cr>
+autocmd FileType clojure nnoremap <buffer> gd :normal [<c-d><cr>
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
@@ -159,7 +171,6 @@ inoremap <S-Tab> <C-V><Tab>
 
 " Show gutter for max line length
 let &colorcolumn=join(range(81,999),",")
-"let &colorcolumn=join(range(120,999),",")
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 " highlight search
