@@ -1,4 +1,4 @@
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # Prefer US English and use UTF-8.
 export LANG='en_US.UTF-8';
