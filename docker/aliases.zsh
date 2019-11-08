@@ -24,3 +24,7 @@ function dmes {
   echo "Loading Docker env --swarm for machine: $1"
   eval $(docker-machine env --swarm $1);
 }
+
+
+# Show all Docker containers by Docker Compose.
+alias dcps='docker ps -a --format "table {{.Label \"com.docker.compose.project\"}}\t{{.Label \"com.docker.compose.service\"}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"'
