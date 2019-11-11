@@ -45,4 +45,6 @@ clean = git-lfs clean -- %f
 	process = git-lfs filter-process
 [user]
 	name = Ticean Bennett
-	email = ticean@gmail.com
+	email = ticean@reactioncommerce.com
+[diff "sopsdiffer"]
+	textconv = sops -d
