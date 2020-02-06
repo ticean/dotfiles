@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-# reaction-symlink-rc-files
-#
-
-REACTION_RC_DIR="$HOME/src/rc-config-files"
-
-ln -Fs "${REACTION_RC_DIR}/reaction.json" ./private/settings/reaction.json
-ln -Fs "${REACTION_RC_DIR}/settings.json" ./settings/settings.json
