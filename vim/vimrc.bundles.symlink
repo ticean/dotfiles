@@ -18,7 +18,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'liquidz/vim-iced', {'for': 'clojure'}
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'mattn/gist-vim'
-Plugin 'nono/vim-handlebars'
+"Plugin 'nono/vim-handlebars'
 Plugin 'pangloss/vim-javascript'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
