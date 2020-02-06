@@ -1,0 +1,4 @@
+#compdef rp
+_files -W $PROJECTS/reaction-platform -/
+
+# See further documentation in `rp`.

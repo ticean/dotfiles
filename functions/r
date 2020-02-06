@@ -1,0 +1,10 @@
+#!/bin/zsh
+#
+# Jump quickly into a reaction-platform directory.
+#
+# Type:
+#
+#   r <tab>
+#
+
+cd "$PROJECTS/reaction-platform/$1"
