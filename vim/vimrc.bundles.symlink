@@ -2,6 +2,7 @@
 Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plugin 'airblade/vim-gitgutter'
 Plugin 'austintaylor/vim-indentobject'
+"Plugin 'bfontaine/zprint.vim'   " busts file writing for clojure w/parinfer!
 Plugin 'bling/vim-airline'
 Plugin 'chriskempson/base16-vim'
 Plugin 'christoomey/vim-tmux-navigator'
