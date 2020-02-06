@@ -235,9 +235,6 @@ let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 0
 
-" Rainbow settings
-let g:rainbow_active = 0
-
 " Align settings
 " Disambiguate ,a & ,t from the Align plugin, making them fast again.
 "
