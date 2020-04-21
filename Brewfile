@@ -20,6 +20,7 @@ brew 'candid82/brew/joker'
 brew 'clojure'
 brew 'coreutils'
 brew 'ctags'
+brew 'direnv'
 brew 'fzf' # fuzzy-finder https://github.com/junegunn/fzf
 brew 'git'
 brew 'git-lfs'
