@@ -20,16 +20,16 @@ echo "Installing NVM versions."
 NVM_VERSIONS=(stable)
 
 NODE_MODULES=( \
-  babel \
-  bower \
-  eslint \
-  grunt-cli \
-  gulp \
-  instant-markdown-d \
-  js-beautify \
-  jscs \
-  jshint \
-  ttystudio \
+  #babel \
+  #bower \
+  #eslint \
+  #grunt-cli \
+  #gulp \
+  #instant-markdown-d \
+  #js-beautify \
+  #jscs \
+  #jshint \
+  #ttystudio \
 )
 
 echo "Installing Node version with NPM." >&2
