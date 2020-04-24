@@ -225,6 +225,9 @@ let NERDSpaceDelims=1
 let NERDTreMinimalUI = 1
 let NERDTreeDirArrows = 1
 
+let g:python2_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 " BufExplorer settings
 let g:bufExplorerDefaultHelp=0                " Do not show default help.
 let g:bufExplorerDisableDefaultKeyMapping=0   " Do not disable mapping.
