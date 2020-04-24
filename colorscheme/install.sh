@@ -3,8 +3,8 @@
 # Install Colors
 # Does the legwork to install the nice colorschemes that I like.
 
-BASE16_SHELL_SRC=git@github.com:chriskempson/base16-shell.git
-BASE16_ITERM2_SRC=git@github.com:martinlindhe/base16-iterm2.git
+BASE16_SHELL_SRC=https://github.com/chriskempson/base16-shell.git
+BASE16_ITERM2_SRC=https://github.com/chriskempson/base16-iterm2.git
 
 COLOR_DIR="${HOME}/.config"
 mkdir -p "$COLOR_DIR"
