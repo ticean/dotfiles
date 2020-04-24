@@ -9,3 +9,17 @@
 # seems to still be working.
 infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $HOME/$TERM.ti
 tic $HOME/$TERM.ti
+
+
+# Install python neovim modules.
+if test "$(command -v python2)"; then
+  python2 -m pip install neovim --upgrade
+fi
+
+if test "$(command -v pip3)"; then
+  pip3 install neovim --upgrade
+fi
+
+if test "$(command -v gem)"; then
+  gem install neovim
+fi
