@@ -1,0 +1,16 @@
+#!/bin/zsh
+#
+# Unbuffer the provided command. For an example use-case, this is useful for
+# commands that run a REPL and buffering gets in the way. Looking at you GNU
+# make, on OSX.
+#
+# Note: There is an unbuffer package but this is simple enough that I'm not
+# gonna use that.
+#
+# Usage: unbuffer <command>
+#
+#   ex: unbuffer make repl
+#
+unbuffer () {
+  stdbuf -i0 -o0 -e0 $@
+}
