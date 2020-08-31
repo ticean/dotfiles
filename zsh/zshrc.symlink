@@ -5,6 +5,11 @@ export ZSH=$DOTFILES
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/src
 
+# Special Python handing cause this is a nightmare.
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
 # you'll have access to them in your scripts.
