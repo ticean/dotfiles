@@ -33,6 +33,6 @@ Thumbs.db
 .env
 .rbenv-vars
 .vagrant
-/vendor/
+#/vendor/
 .nesh*
 .node_repl*
